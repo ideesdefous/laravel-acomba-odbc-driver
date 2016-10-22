@@ -1,4 +1,4 @@
-# Laravel Acomba ODBC Driverxxw
+# Laravel Acomba ODBC Driver
 An ODBC Driver for Acomba within Laravel
 
 ## Installation
