@@ -1,28 +1,28 @@
 {
-  "name": "tobymaxham/laravel-odbc-driver",
-  "description": "An ODBC Driver for SQL Server within Laravel",
+  "name": "ideesdefous/laravel-acomba-odbc-driver",
+  "description": "An ODBC Driver for Acomba within Laravel",
   "keywords": [
-    "tobymaxham",
-    "laravel", "sqlserver", "odbc"
+    "ideesdefous",
+    "laravel", "acomba", "odbc"
   ],
   "license": "MIT",
   "authors": [
     {
-      "name": "Tobias Maxham",
-      "email": "git2016@maxham.de"
+      "name": "Patrick Samson",
+      "email": "patrick@ideesdefous.com"
     }
   ],
-  "homepage": "https://maxham.de",
+  "homepage": "http://ideesdefous.com",
   "support": {
-    "issues": "https://github.com/TobyMaxham/laravel-odbc-driver/issues",
-    "source": "https://github.com/TobyMaxham/laravel-odbc-driver"
+    "issues": "https://github.com/ideesdefous/laravel-acomba-odbc-driver/issues",
+    "source": "https://github.com/ideesdefous/laravel-acomba-odbc-driver"
   },
   "require": {
     "php": ">=5.5.9"
   },
   "autoload": {
     "psr-4": {
-      "TobyMaxham\\Database\\": "src"
+      "IdeesDeFous\\Acomba\\": "src"
     }
   },
   "minimum-stability": "dev"

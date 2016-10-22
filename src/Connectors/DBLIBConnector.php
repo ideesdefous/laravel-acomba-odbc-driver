@@ -1,6 +1,6 @@
 <?php
 
-namespace TobyMaxham\Database\Connectors;
+namespace IdeesDeFous\Acomba\Connectors;
 
 use Exception;
 use Illuminate\Database\Connectors\Connector as BaceConnector;
@@ -8,34 +8,31 @@ use Illuminate\Database\Connectors\ConnectorInterface;
 use Illuminate\Support\Arr;
 use PDO;
 
-/**
- * Class DBLIBConnector
- * @package TobyMaxham\Database\Connectors
- * @author Tobias Maxham <git2016@maxham.de>
- */
 class DBLIBConnector extends BaceConnector implements ConnectorInterface
 {
-
     /**
      * @param array $config
+     *
      * @return PDO
      */
     public function connect(array $config)
     {
         $dsn = $this->getDsn($config);
         $options = $this->getOptions($config);
-        
+
         $connection = $this->createConnection($dsn, $config, $options);
+
         return $connection;
     }
 
     /**
      * @param array $config
+     *
      * @return string
      */
     protected function getDsn(array $config)
     {
-        /**
+        /*
          * @var string $host
          * @var string $port
          * @var string $database
@@ -50,8 +47,9 @@ class DBLIBConnector extends BaceConnector implements ConnectorInterface
     /**
      * Create a new PDO connection.
      *
-     * @param  string $dsn
-     * @param  array $config
+     * @param string $dsn
+     * @param array  $config
+     *
      * @return \PDO
      */
     public function createConnection($dsn, array $config, array $options)
