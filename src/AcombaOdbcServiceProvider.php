@@ -3,23 +3,24 @@
 namespace IdeesDeFous\Acomba;
 
 use Illuminate\Support\ServiceProvider;
-use IdeesDeFous\Acomba\Connectors\DBLIBConnector;
-use Illuminate\Database\DatabaseManager as Factory;
+use IdeesDeFous\Acomba\Connectors\AcombaConnector;
+use Illuminate\Database\DatabaseManager;
 
 class AcombaOdbcServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        /** @var Factory $factory */
-        $factory = $this->app['db'];
+        /** @var DatabaseManager $manager */
+        $manager = $this->app['db'];
 
-        $factory->extend('dblib', function ($config) {
+        $manager->extend('acomba', function ($config) {
             if (!isset($config['prefix'])) {
                 $config['prefix'] = '';
             }
-            $connector = new DBLIBConnector();
+
+            $connector = new AcombaConnector();
             $pdo = $connector->connect($config);
-            $db = new DBLIBConnection($pdo, $config['database'], $config['prefix']);
+            $db = new AcombaConnection($pdo, $config['database'], $config['prefix']);
 
             return $db;
         });

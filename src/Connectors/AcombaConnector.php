@@ -8,7 +8,7 @@ use Illuminate\Database\Connectors\ConnectorInterface;
 use Illuminate\Support\Arr;
 use PDO;
 
-class DBLIBConnector extends BaceConnector implements ConnectorInterface
+class AcombaConnector extends BaceConnector implements ConnectorInterface
 {
     /**
      * @param array $config
@@ -39,9 +39,7 @@ class DBLIBConnector extends BaceConnector implements ConnectorInterface
          */
         extract($config);
 
-        return isset($config['port'])
-            ? "dblib:host={$host};port={$port};dbname={$database}"
-            : "dblib:host={$host};dbname={$database}";
+        return "odbc:{$config['dsn']}";
     }
 
     /**

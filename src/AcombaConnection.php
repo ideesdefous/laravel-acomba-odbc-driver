@@ -4,7 +4,7 @@ namespace IdeesDeFous\Acomba;
 
 use Illuminate\Database\SqlServerConnection;
 
-class DBLIBConnection extends SQLServerConnection
+class AcombaConnection extends SQLServerConnection
 {
     // Empty holder
 }

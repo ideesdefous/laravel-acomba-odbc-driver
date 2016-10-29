@@ -29,12 +29,8 @@ Register the Service Provider in `config/app.php`
 Copy the database configuration in `config/database.php`
 ```php
 'acomba' => [
-    'driver' => 'dblib',
-    'dsn' => 'Driver={Acomba ODBC Driver};Server=your-server-name',
-    'host' => "your-hostname",
-    'grammar' => 'DB2',
+    'dsn' => 'acomba', // The name of your DSN ODBC connection. (System or User Data Source).
     'username' => 'user',
     'password' => 'password',
-    'database' => '',
 ],
 ```
