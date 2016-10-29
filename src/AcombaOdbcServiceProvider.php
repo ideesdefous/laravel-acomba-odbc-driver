@@ -5,6 +5,7 @@ namespace IdeesDeFous\Acomba;
 use Illuminate\Support\ServiceProvider;
 use IdeesDeFous\Acomba\Connectors\AcombaConnector;
 use Illuminate\Database\DatabaseManager;
+use Illuminate\Support\Arr;
 
 class AcombaOdbcServiceProvider extends ServiceProvider
 {
@@ -20,7 +21,7 @@ class AcombaOdbcServiceProvider extends ServiceProvider
 
             $connector = new AcombaConnector();
             $pdo = $connector->connect($config);
-            $db = new AcombaConnection($pdo, $config['database'], $config['prefix']);
+            $db = new AcombaConnection($pdo, Arr::get($config, 'database', ''), $config['prefix']);
 
             return $db;
         });
